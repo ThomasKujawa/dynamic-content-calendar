@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Content Calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">Dynamic Content Calendar</div>
+    <p class="site-subtitle">Interaktives Zahlenfeld für medizinische Inhalte</p>
+  </header>
+
+  <main class="site-main">
+    <section class="intro">
+      <p>
+        Klicke auf eine der Zahlen, um einen zufällig zugeordneten Inhalt anzuzeigen.
+        Zu jeder Zahl gehören zwei Varianten (hell/dunkel) desselben Inhalts.
+      </p>
+    </section>
+
+    <section class="playfield-wrapper">
+      <div id="playfield" class="playfield" aria-label="Zahlenfeld"></div>
+    </section>
+  </main>
+
+  <div id="content-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" type="button" data-close-modal aria-label="Inhalt schließen">×</button>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span id="modal-number" class="modal-number"></span>
+          <span id="modal-variant" class="modal-variant"></span>
+        </div>
+        <h2 id="modal-author" class="modal-author"></h2>
+        <p id="modal-text" class="modal-text"></p>
+        <a id="modal-link" class="modal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Weiterführender Link
+        </a>
+        <figure class="modal-figure">
+          <img id="modal-image" alt="Inhaltsbild" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
