@@ -1,10 +1,10 @@
 :root {
-  /* Grundfarben – Apotheken-Rot nach RAL 3020 / HKS 13 */
-  --color-red: #bb1e10; /* Verkehrsrot, RAL 3020 */
+  /* Grundfarben – Apotheken-Rot nach RAL 3020 / HKS 13 (ungefähr) */
+  --color-red: #bb1e10;
   --color-red-dark: #7f140b;
   --color-red-light: #f9d0ca;
 
-  /* Komplementärfarbe (kaltes, medizinisch wirkendes Cyan/Türkis) */
+  /* Komplementärfarbe (kaltes, medizinisches Cyan/Türkis) */
   --color-cyan: #0b8fa5;
   --color-cyan-dark: #055363;
   --color-cyan-light: #c9edf3;
@@ -76,6 +76,15 @@ img {
   padding: 0 var(--space-4) var(--space-8);
 }
 
+.footer {
+  padding: var(--space-4) var(--space-6);
+  text-align: center;
+}
+
+.version {
+  font-size: 0.85em; color: #666; margin-top: 10px;
+}
+
 .intro {
   max-width: 40rem;
   margin: 0 auto var(--space-6);
@@ -93,10 +102,17 @@ img {
   width: 100%;
   height: min(70vh, 600px);
   border-radius: 1.5rem;
-  background: radial-gradient(circle at 20% 0%, var(--color-red-light) 0, #ffffff 40%, var(--color-cyan-light) 100%);
+  background: radial-gradient(
+          circle at 20% 0%,
+          var(--color-red-light) 0,
+          #ffffff 40%,
+          var(--color-cyan-light) 100%
+  );
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
+
+/* Nummern-Buttons im Spielfeld */
 
 .number-button {
   position: absolute;
@@ -110,7 +126,11 @@ img {
   font-weight: 600;
   font-size: 1.05rem;
   cursor: pointer;
-  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, background-color 0.18s ease-out, color 0.18s ease-out;
+  transition:
+          transform 0.18s ease-out,
+          box-shadow 0.18s ease-out,
+          background-color 0.18s ease-out,
+          color 0.18s ease-out;
   user-select: none;
 }
 
@@ -130,7 +150,12 @@ img {
 }
 
 .number-button--dark {
-  background: radial-gradient(circle at 30% 0%, var(--color-cyan) 0, var(--color-cyan-dark) 55%, #012a33 100%);
+  background: radial-gradient(
+          circle at 30% 0%,
+          var(--color-cyan) 0,
+          var(--color-cyan-dark) 55%,
+          #012a33 100%
+  );
   color: #fdfdfd;
 }
 
@@ -145,6 +170,7 @@ img {
   position: fixed;
   inset: 0;
   display: none;
+  z-index: 20;
 }
 
 .modal.is-open {
@@ -185,17 +211,200 @@ img {
 }
 
 .modal-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
-  gap: var(--space-6);
-  align-items: flex-start;
+  display: flex;
+  justify-content: center;
 }
+
+.modal-content {
+  max-width: 32rem;
+}
+
+/* Sprite-Icon im Modal */
+
+.modal-icon {
+  width: 96px;       /* Icon-Breite im Sprite */
+  height: 96px;      /* Icon-Höhe im Sprite  */
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-3);
+  background-color: #f0f2f5;
+}
+
+/* Sprite-Grundklasse: hier dein Bildpfad */
+/* images/fall1.png muss im Repo unter ./images liegen */
+/* Basis: gemeinsame Eigenschaften für alle Sprites */
+.icon-sprite {
+  background-repeat: no-repeat;
+}
+
+/* Fall 1: pAVK-Iconset */
+.icon-sprite-fall1 {
+  background-image: url("./images/fall1.png");
+  background-size: 400% 200%; /* an dein Raster angepasst lassen */
+}
+
+/* Fall 2: anderes Thema, eigenes Iconset */
+.icon-sprite-fall2 {
+  background-image: url("./images/fall2.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 3: anderes Thema, eigenes Iconset */
+.icon-sprite-fall3 {
+  background-image: url("./images/fall3.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 4: anderes Thema, eigenes Iconset */
+.icon-sprite-fall4 {
+  background-image: url("./images/fall4.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 5: anderes Thema, eigenes Iconset */
+.icon-sprite-fall5 {
+  background-image: url("./images/fall5.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 6: anderes Thema, eigenes Iconset */
+.icon-sprite-fall6 {
+  background-image: url("./images/fall6.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 7: anderes Thema, eigenes Iconset */
+.icon-sprite-fall7 {
+  background-image: url("./images/fall7.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 8: anderes Thema, eigenes Iconset */
+.icon-sprite-fall8 {
+  background-image: url("./images/fall8.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 9: anderes Thema, eigenes Iconset */
+.icon-sprite-fall9 {
+  background-image: url("./images/fall9.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 10: anderes Thema, eigenes Iconset */
+.icon-sprite-fall10 {
+  background-image: url("./images/fall10.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 11: anderes Thema, eigenes Iconset */
+.icon-sprite-fall11 {
+  background-image: url("./images/fall11.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 12: anderes Thema, eigenes Iconset */
+.icon-sprite-fall12 {
+  background-image: url("./images/fall12.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 13: anderes Thema, eigenes Iconset */
+.icon-sprite-fall13 {
+  background-image: url("./images/fall13.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 14: anderes Thema, eigenes Iconset */
+.icon-sprite-fall14 {
+  background-image: url("./images/fall14.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 15: anderes Thema, eigenes Iconset */
+.icon-sprite-fall15 {
+  background-image: url("./images/fall15.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 16: anderes Thema, eigenes Iconset */
+.icon-sprite-fall16 {
+  background-image: url("./images/fall16.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 17: anderes Thema, eigenes Iconset */
+.icon-sprite-fall17 {
+  background-image: url("./images/fall17.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 18: anderes Thema, eigenes Iconset */
+.icon-sprite-fall18 {
+  background-image: url("./images/fall18.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 19: anderes Thema, eigenes Iconset */
+.icon-sprite-fall19 {
+  background-image: url("./images/fall19.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 20: anderes Thema, eigenes Iconset */
+.icon-sprite-fall20 {
+  background-image: url("./images/fall20.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 21: anderes Thema, eigenes Iconset */
+.icon-sprite-fall21 {
+  background-image: url("./images/fall21.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 22: anderes Thema, eigenes Iconset */
+.icon-sprite-fall22 {
+  background-image: url("./images/fall22.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 23: anderes Thema, eigenes Iconset */
+.icon-sprite-fall23 {
+  background-image: url("./images/fall23.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 24: anderes Thema, eigenes Iconset */
+.icon-sprite-fall24 {
+  background-image: url("./images/fall24.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Fall 25: anderes Thema, eigenes Iconset */
+.icon-sprite-fall25 {
+  background-image: url("./images/fall25.png");
+  background-size: 400% 200%; /* falls gleich geschnitten; sonst anpassen */
+}
+
+/* Einzelne „Slices“ im 4x2-Raster */
+.icon-0 { background-position:   0%   0%; }
+.icon-1 { background-position:  33.3% 0%; }
+.icon-2 { background-position:  66.6% 0%; }
+.icon-3 { background-position: 100%  0%; }
+
+.icon-4 { background-position:   0%  100%; }
+.icon-5 { background-position:  33.3% 100%; }
+.icon-6 { background-position:  66.6% 100%; }
+.icon-7 { background-position: 100% 100%; }
+
+/* Meta-Infos im Modal */
 
 .modal-meta {
   display: flex;
   gap: var(--space-2);
   align-items: center;
   margin-bottom: var(--space-2);
+  justify-content: center;
 }
 
 .modal-number {
@@ -221,6 +430,7 @@ img {
 .modal-author {
   margin: 0 0 var(--space-2);
   font-size: 1.15rem;
+  text-align: center;
 }
 
 .modal-text {
@@ -247,18 +457,7 @@ img {
   text-decoration: underline;
 }
 
-.modal-figure {
-  margin: 0;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  background: #f0f2f5;
-}
-
-.modal-figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Responsives Feintuning */
 
 @media (max-width: 768px) {
   .site-main {
@@ -272,9 +471,5 @@ img {
   .modal-dialog {
     margin-inline: var(--space-3);
     padding-inline: var(--space-4);
-  }
-
-  .modal-body {
-    grid-template-columns: minmax(0, 1fr);
   }
 }

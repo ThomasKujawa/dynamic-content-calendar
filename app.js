@@ -3,56 +3,491 @@
   - contentItems enthält die Inhalte, jeweils mit zwei Varianten.
   - Für jedes Item wird eine Zahl vergeben.
   - Zu jeder Zahl werden zwei Buttons erzeugt (hell/dunkel) und zufällig im Spielfeld verteilt.
-  - Klick auf einen Button öffnet die zugehörige Variante im Modal.
+  - Klick auf einen Button öffnet das Modal mit einer Variante.
+  - Zusätzlich wird bei jedem Öffnen ein zufälliges Icon aus dem Sprite gewählt.
 */
 
 const contentItems = [
   {
     id: 1,
+    sprite: "fall1",
     variants: [
       {
-        label: "Variante hell",
-        author: "Dr. med. Beispiel",
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
         text:
-          "Dies ist eine Beispielvariante eines medizinischen Textes. Ersetze diesen Text durch deine echten Inhalte.",
-        link: "https://www.aponet.de/",
-        image:
-          "https://picsum.photos/seed/medizin-hell/800/600",
+            "Dies ist eine Beispielvariante eines medizinischen Textes. Ersetze diesen Text durch deine echten Inhalte.",
+        link: "case/fall1_kurz.pdf"
       },
       {
-        label: "Variante dunkel",
-        author: "Dr. med. Beispiel",
+        label: "Langversion",
+        author: "Autor: unbekannt",
         text:
-          "Dies ist die alternative Variante desselben Inhalts, z. B. mit anderer Tonalität oder Detailtiefe.",
-        link: "https://www.abda.de/",
-        image:
-          "https://picsum.photos/seed/medizin-dunkel/800/600",
-      },
-    ],
+            "Dies ist die alternative Variante desselben Inhalts, z. B. mit anderer Tonalität oder Detailtiefe.",
+        link: "case/fall1_lang.pdf"
+      }
+    ]
   },
   {
     id: 2,
+    sprite: "fall2",
     variants: [
       {
-        label: "Variante hell",
-        author: "Apothekerin Musterfrau",
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
         text:
-          "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
-        link: "https://www.aponet.de/artikel",
-        image:
-          "https://picsum.photos/seed/apotheke-hell/800/600",
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall2_kurz.pdf"
       },
       {
-        label: "Variante dunkel",
-        author: "Apothekerin Musterfrau",
+        label: "Langversion",
+        author: "Autor: unbekannt",
         text:
-          "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
-        link: "https://www.deutsche-apotheker-zeitung.de/",
-        image:
-          "https://picsum.photos/seed/apotheke-dunkel/800/600",
-      },
-    ],
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall2_lang.pdf"
+      }
+    ]
   },
+  {
+    id: 3,
+    sprite: "fall3",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall3_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall3_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 4,
+    sprite: "fall4",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall4_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall4_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 5,
+    sprite: "fall5",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall5_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall5_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 6,
+    sprite: "fall6",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall6_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall6_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 7,
+    sprite: "fall7",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall7_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall7_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 8,
+    sprite: "fall8",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall8_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall8_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 9,
+    sprite: "fall9",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall9_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall9_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 10,
+    sprite: "fall10",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall10_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall10_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 11,
+    sprite: "fall11",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall11_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall11_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 12,
+    sprite: "fall12",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall12_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall12_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 13,
+    sprite: "fall13",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall13_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall13_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 14,
+    sprite: "fall14",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall14_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall14_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 15,
+    sprite: "fall15",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall15_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall15_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 16,
+    sprite: "fall16",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall16_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall16_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 17,
+    sprite: "fall17",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall17_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall17_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 18,
+    sprite: "fall18",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall18_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall18_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 19,
+    sprite: "fall19",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall19_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall19_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 20,
+    sprite: "fall20",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall20_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall20_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 21,
+    sprite: "fall21",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall21_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall21_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 22,
+    sprite: "fall22",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall22_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall22_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 23,
+    sprite: "fall23",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall23_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall23_lang.pdf"
+      }
+    ]
+  },
+  {
+    id: 24,
+    sprite: "fall24",
+    variants: [
+      {
+        label: "Kurzversion",
+        author: "Autor: unbekannt",
+        text:
+            "Kurzer Hinweistext zur richtigen Einnahme von Arzneimitteln. Diese Daten kannst du dynamisch ersetzen.",
+        link: "case/fall24_kurz.pdf"
+      },
+      {
+        label: "Langversion",
+        author: "Autor: unbekannt",
+        text:
+            "Alternative Formulierung desselben Hinweises, z. B. für ein anderes Medium oder eine andere Zielgruppe.",
+        link: "case/fall24_lang.pdf"
+      }
+    ]
+  }
 ];
 
 function shuffle(array) {
@@ -79,80 +514,116 @@ function createButton(number, variantIndex, item) {
   return button;
 }
 
-function placeButtonRandomly(button, containerRect) {
-  // Wir arbeiten mit Prozentwerten und zentrieren via translate(-50%, -50%),
-  // damit die Buttons innerhalb des Feldes bleiben.
-  const marginPercent = 8; // kleiner Rand zum Spielfeldrand
-  const top =
-    marginPercent + Math.random() * (100 - marginPercent * 2);
-  const left =
-    marginPercent + Math.random() * (100 - marginPercent * 2);
+// NEU – mit Collision Detection
+const GAP = 20; // px Mindestabstand zwischen Buttons
 
-  button.style.top = `${top}%`;
-  button.style.left = `${left}%`;
-  button.style.transform = "translate(-50%, -50%)";
+function overlaps(a, b) {
+  return !(
+      a.x + a.w + GAP < b.x ||
+      b.x + b.w + GAP < a.x ||
+      a.y + a.h + GAP < b.y ||
+      b.y + b.h + GAP < a.y
+  );
 }
 
-function openModal({ number, variantLabel, author, text, link, image }) {
+function placeButtonRandomly(button, container, placedButtons) {
+  const btnSize = 56; // px – Größe deiner Buttons (aus style.css anpassen)
+  const pad = 20;     // px Rand zum Spielfeldrand
+
+  const maxX = container.clientWidth  - btnSize - pad;
+  const maxY = container.clientHeight - btnSize - pad;
+
+  let pos, tries = 0;
+  do {
+    pos = {
+      x: pad + Math.random() * (maxX - pad),
+      y: pad + Math.random() * (maxY - pad),
+      w: btnSize,
+      h: btnSize,
+    };
+    tries++;
+  } while (placedButtons.some(p => overlaps(pos, p)) && tries < 300);
+
+  placedButtons.push(pos);                      // merken für nächste Buttons
+  button.style.left      = `${pos.x}px`;
+  button.style.top       = `${pos.y}px`;
+  button.style.transform = 'none';              // kein translate mehr nötig
+}
+
+function openModal({ number, variantLabel, author, text, link, iconIndex, spriteKey }) {
   const modal = document.getElementById("content-modal");
   const numberEl = document.getElementById("modal-number");
   const variantEl = document.getElementById("modal-variant");
   const authorEl = document.getElementById("modal-author");
   const textEl = document.getElementById("modal-text");
   const linkEl = document.getElementById("modal-link");
-  const imageEl = document.getElementById("modal-image");
+  const iconEl = document.getElementById("modal-icon");
 
   numberEl.textContent = number;
   variantEl.textContent = variantLabel;
   authorEl.textContent = author;
   textEl.textContent = text;
   linkEl.href = link;
-  imageEl.src = image;
+
+  // Basis-Klassen setzen
+  iconEl.className = "modal-icon icon-sprite";
+
+  // Sprite nach Fall wählen, z. B. icon-sprite-fall1 oder icon-sprite-fall2
+  if (spriteKey) {
+    iconEl.classList.add(`icon-sprite-${spriteKey}`);
+  }
+
+  // Konkretes Icon im Sprite wählen
+  if (typeof iconIndex === "number") {
+    iconEl.classList.add(`icon-${iconIndex}`);
+  }
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
 }
 
+
 function closeModal() {
   const modal = document.getElementById("content-modal");
-  const imageEl = document.getElementById("modal-image");
+  const iconEl = document.getElementById("modal-icon");
 
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
-  imageEl.removeAttribute("src");
+
+  if (iconEl) {
+    iconEl.className = "modal-icon icon-sprite";
+  }
 }
 
-function findItemById(id) {
-  return contentItems.find((item) => item.id === id) || null;
-}
 
 function initPlayfield() {
+  const placedButtons = [];
   const playfield = document.getElementById("playfield");
   if (!playfield) return;
 
-  const numbers = shuffle(
-    contentItems.map((_, index) => index + 1)
-  );
+  // Items mischen, NICHT nur die Nummern
+  const shuffledItems = shuffle(contentItems);
 
-  const rect = playfield.getBoundingClientRect();
-
-  numbers.forEach((number, idx) => {
-    const item = contentItems[idx];
-    if (!item) return;
+  shuffledItems.forEach((item, idx) => {
+    const number = idx + 1; // 1, 2, 3, ... entsprechend der zufälligen Reihenfolge
 
     [0, 1].forEach((variantIndex) => {
       const button = createButton(number, variantIndex, item);
-      placeButtonRandomly(button, rect);
+      placeButtonRandomly(button, playfield, placedButtons);
 
       button.addEventListener("click", () => {
         const variant = item.variants[variantIndex];
+        const randomIconIndex = Math.floor(Math.random() * 8);
+        const spriteKey = item.sprite; // "fall1", "fall2", ...
+
         openModal({
           number,
           variantLabel: variant.label,
           author: variant.author,
           text: variant.text,
           link: variant.link,
-          image: variant.image,
+          iconIndex: randomIconIndex,
+          spriteKey
         });
       });
 
@@ -160,6 +631,7 @@ function initPlayfield() {
     });
   });
 }
+
 
 function initModal() {
   const modal = document.getElementById("content-modal");
