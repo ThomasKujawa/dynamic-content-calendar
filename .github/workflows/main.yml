@@ -1,0 +1,19 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      with:
+        server: hosting226951.ae9c0.netcup.net
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftp
+        port: 21
+        dangerous-clean-slate: false
