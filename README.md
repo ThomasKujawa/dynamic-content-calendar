@@ -123,7 +123,7 @@ Beiträge sind willkommen! Wenn Sie Verbesserungen oder neue Features vorschlage
 
 ## 📝 Lizenz
 
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der [LICENSE](LICENSE)-Datei.
+Dieses Projekt ist unter der GPL 3.0-Lizenz lizenziert. Weitere Informationen finden Sie in der [LICENSE](LICENSE)-Datei.
 
 ## 👤 Autor
 
